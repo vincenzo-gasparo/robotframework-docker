@@ -8,8 +8,8 @@ THREADS="0"
 docker run --rm \
            -v $PWD/$HOST_TESTDIR:/$TESTDIR/ \
            -v $PWD/output:/outputs \
-           -e ROBOTARGS=$ARGS \
-           -e THREADS=$THREADS \
-           -e TESTDIR=$TESTDIR \
-           -e SUBTESTDIR=$SUBTESTDIR \
-           robotframework-docker:$VERSION
+           -e ROBOTARGS="$ARGS" \
+           -e THREADS="$THREADS" \
+           -e TESTDIR="$TESTDIR" \
+           -e SUBTESTDIR="$SUBTESTDIR" \
+           blastoiseomg/robotframework-docker:$VERSION
