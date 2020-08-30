@@ -2,7 +2,7 @@
 
 
 ## Dockerhub
-You can find this image on dockerhub @ https://hub.docker.com/r/agubellini/robotframework-docker
+You can find this image on dockerhub @ https://hub.docker.com/r/blastoiseomg/robotframework-docker
 
 ## usage
 inside `run-docker.sh` change:
@@ -21,9 +21,12 @@ currently available dependencies are:
 robotframework
 robotframework-seleniumlibrary
 robotframework-requests
+robotframework-requests-extension
 robotframework-pabot
-robojslib
+facile-toolkit
+robotframework-faker
 pyyaml
+exrex
 ```
 
 ## outputs
