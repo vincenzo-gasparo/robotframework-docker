@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 VERSION="latest"
-TESTDIR=atests
-SUBTESTDIR=
-HOST_TESTDIR=atests
+ROBOT_FILES=
+HOST_TESTDIR="atests"
+TESTDIR=$(basename $HOST_TESTDIR)
 ARGS="--console-verbose"
 THREADS="0"
 docker run --rm \
@@ -10,6 +10,6 @@ docker run --rm \
            -v $PWD/output:/outputs \
            -e ROBOTARGS="$ARGS" \
            -e THREADS="$THREADS" \
+           -e ROBOT_FILES="$ROBOT_FILES" \
            -e TESTDIR="$TESTDIR" \
-           -e SUBTESTDIR="$SUBTESTDIR" \
            blastoiseomg/robotframework-docker:$VERSION
