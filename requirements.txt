@@ -1,9 +1,6 @@
 robotframework
 robotframework-seleniumlibrary
 robotframework-requests
-robotframework-requests-extension
 robotframework-pabot
-facile-toolkit
 robotframework-faker
 pyyaml
-exrex
