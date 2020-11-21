@@ -3,6 +3,8 @@ set -e
 
 [ -z "$ROBOT_COMMAND" ] && ROBOT_COMMAND="robot"
 [ -z "$ROBOT_FILES" ] && ROBOT_FILES="."
+[ -z "$SLACKREPORTS" ] && SLACKREPORTS="false"
+[ "$SLACKREPORTS" == "true" ] && SLACK_LISTENER="--listener /tmp/SlackNotifier.py:${SLACK_HOOK}"
 
 echo "#========! EXECUTING COMMAND $ROBOT_COMMAND $ROBOT_ARGS --outputdir /output/ $ROBOT_FILES !========#"
 xvfb-run -a --server-args="-screen 0 $XVFB_RES -ac -nolisten tcp -dpi 96 +extension RANDR" \
