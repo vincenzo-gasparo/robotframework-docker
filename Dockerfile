@@ -21,4 +21,4 @@ RUN pip3 install -r /tmp/requirements.txt
 RUN /rf_bin/install_browsers.sh
 WORKDIR /robot
 
-CMD ["sh", "/bin/run.sh"]
+CMD ["sh", "/rf_bin/run.sh"]
