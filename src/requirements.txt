@@ -5,5 +5,6 @@ robotframework-pabot
 robotframework-faker
 pyyaml
 pymongo
+dnspython
 python-Levenshtein
 fuzzywuzzy
