@@ -4,5 +4,6 @@ robotframework-requests
 robotframework-pabot
 robotframework-faker
 pyyaml
+pymongo
 python-Levenshtein
 fuzzywuzzy
