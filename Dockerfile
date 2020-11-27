@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.8
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
