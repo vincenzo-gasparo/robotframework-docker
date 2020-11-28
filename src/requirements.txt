@@ -8,3 +8,4 @@ pymongo
 dnspython
 python-Levenshtein
 fuzzywuzzy
+unidecode
