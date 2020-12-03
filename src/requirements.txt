@@ -9,3 +9,5 @@ dnspython
 python-Levenshtein
 fuzzywuzzy
 unidecode
+facile_toolkit
+facile-toolkit2
