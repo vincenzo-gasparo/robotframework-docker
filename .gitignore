@@ -1,1 +1,5 @@
 output/
+*.log
+*.png
+*.html
+*.xml

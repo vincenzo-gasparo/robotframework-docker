@@ -5,32 +5,32 @@
 You can find this image on dockerhub @ https://hub.docker.com/r/blastoiseomg/robotframework-docker
 
 ## usage
-inside `run-docker.sh` change:
-```
-HOST_TESTDIR= this is your local test directory. Example: HOST_TESTDIR=tests
-ROBOTARGS = pass your robotframework arguments through this variable. Has to be included in docker run command.
-THREADS= can be either 1 or 0. If set to 0 then all tests are executed with Robotframework, otherwise if set to 1 all tests will be executed with Pabot.
-SUBTESTDIR= specific folder or tests. Examples: running a specific test: SUBTESTDIR=mysubtestsfolder/mytest.robot running a specific subfolder: SUBTESTDIR=mysubtestsfolder/
-```
-then:
-`sh run-docker.sh`
+By default the docker image run all tests inside the container /robot folder and outputs test results to /otput folder, so you've got to mount the root test folder (which includes tests and resources) and the output folder.
 
-## dependencies
-currently available dependencies are:
+Example
 ```
-robotframework
-robotframework-seleniumlibrary
-robotframework-requests
-robotframework-requests-extension
-robotframework-pabot
-facile-toolkit
-robotframework-faker
-pyyaml
-exrex
+docker run --rm -v $PWD/atests:/robot -v $PWD/output:/output blastoiseomg/robotframework-docker:latest 
 ```
 
-## outputs
-output files will be saved to host under `$PWD/output`
+Inside `run-docker.sh` change:
+
+- **ROBOT_FILES:** path of the folder/file to run inside the root test folder you previously mounted.
+
+- **ROBOT_ARGS:** robot framework command line arguments.
+
+- **ROBOT_ARGS_MASK:** robot framework command line arguments that should not appear in logs for privacy reasons (passwords, apikeys etc.)
+
+- **ROBOT_COMMAND:** either `robot` for single thread execution or `pabot` for parallel execution.
+
+
+Then:
+```
+chmod +x run-docker.sh
+./run-docker.sh
+```
+## Dependencies
+You can customize python dependencies to be installed by editing `src/requirements.txt` file
+
 
 ## Notes
 This docker is able to run both Firefox and Chrome tests.
