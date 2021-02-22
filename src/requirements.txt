@@ -11,3 +11,6 @@ fuzzywuzzy
 unidecode
 facile_toolkit
 facile-toolkit2
+httpx
+PyPDF2
+jsonschema
